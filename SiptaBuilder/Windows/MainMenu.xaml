@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            <TextBox Text="{Binding CurrentUser.Name}"></TextBox>
+            <TextBlock TextWrapping="Wrap" Text="{Binding CurrentEmployee.FullName}"></TextBlock>
             <Button Margin="0,5">
                 <Label>Text</Label>
             </Button>

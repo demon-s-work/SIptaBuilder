@@ -1,22 +1,22 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using SiptaBuilder.Dal.Repositories.UserRepository.Models;
+using SiptaBuilder.Dal.Repositories.EmployeeRepository.Models;
 
 namespace SiptaBuilder.Windows
 {
 	public class MainMenuVM : INotifyPropertyChanged
 	{
-		public User CurrentUser
+		public Employee CurrentEmployee
 		{
-			get => _currentUser;
+			get => _currentEmployee;
 			set
 			{
-				_currentUser = value;
+				_currentEmployee = value;
 				OnPropertyChanged();
 			}
 		}
 		
-		private User _currentUser;
+		private Employee _currentEmployee;
 		public event PropertyChangedEventHandler? PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)

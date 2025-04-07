@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SiptaBuilder.Dal.Repositories.AuthRepository;
-using SiptaBuilder.Dal.Repositories.UserRepository;
-using SiptaBuilder.Dal.Repositories.UserRepository.Models;
+using SiptaBuilder.Dal.Repositories.EmployeeRepository;
+using SiptaBuilder.Dal.Repositories.EmployeeRepository.Models;
 using SiptaBuilder.Dal.Settings;
 using SiptaBuilder.Extensions;
 using SiptaBuilder.Windows;
@@ -16,13 +16,13 @@ namespace SiptaBuilder.Services
 		IOptionsMonitor<DbSettings> dbSettings)
 		
 	{
-		public async Task<User?> Auth(string login, string password)
+		public async Task<Employee?> Auth(string login, string password)
 		{
 			if (await authRepository.TryConnect(login, password))
 			{
 				dbSettings.CurrentValue.ConnectionString = string.Format(dbSettings.CurrentValue.ConnectionStringTemplate, login, password);
-				var userRepository = Program.ServiceProvider.GetService(typeof(UserRepository)) as UserRepository;
-				var user = await userRepository?.Authenticate(login, password.CreateMD5());
+				var userRepository = Program.ServiceProvider.GetService(typeof(EmployeeRepository)) as EmployeeRepository;
+				var user = await userRepository?.Authenticate(login, password.CreateSha256());
 
 				return user;
 			}

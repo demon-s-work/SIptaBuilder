@@ -1,18 +1,18 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using SiptaBuilder.Dal.Repositories.UserRepository.Models;
+using SiptaBuilder.Dal.Repositories.EmployeeRepository.Models;
 
 namespace SiptaBuilder.Windows
 {
 	public partial class MainMenu
 	{
-		public MainMenu(User currentUser)
+		public MainMenu(Employee currentEmployee)
 		{
 			InitializeComponent();
 			var vm = new MainMenuVM
 			{
-				CurrentUser = currentUser
+				CurrentEmployee = currentEmployee
 			};
 			DataContext = vm;
 
