@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiptaBuilder", "SiptaBuilder\SiptaBuilder.csproj", "{214B99B7-8858-4B62-990D-F65A50D7C5F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiptaBuilder.Dal", "SiptaBuilder.Dal\SiptaBuilder.Dal.csproj", "{0B1BE4EC-572B-4FAD-BE85-38EB86BAAF7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{214B99B7-8858-4B62-990D-F65A50D7C5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214B99B7-8858-4B62-990D-F65A50D7C5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214B99B7-8858-4B62-990D-F65A50D7C5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214B99B7-8858-4B62-990D-F65A50D7C5F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1BE4EC-572B-4FAD-BE85-38EB86BAAF7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1BE4EC-572B-4FAD-BE85-38EB86BAAF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1BE4EC-572B-4FAD-BE85-38EB86BAAF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1BE4EC-572B-4FAD-BE85-38EB86BAAF7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
