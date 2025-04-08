@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using SiptaBuilder.Dal.Repositories.AuthRepository;
 using SiptaBuilder.Dal.Repositories.EmployeeRepository;
+using SiptaBuilder.Dal.Repositories.PositionRepository;
 using SiptaBuilder.Dal.Settings;
 using SiptaBuilder.Services;
 
@@ -17,6 +18,7 @@ namespace SiptaBuilder.Extensions
 		public static void ConfigureRepositories(this IServiceCollection services)
 		{
 			services.AddTransient<EmployeeRepository>();
+			services.AddTransient<PositionRepository>();
 			services.AddScoped<AuthRepository>();
 		}
 

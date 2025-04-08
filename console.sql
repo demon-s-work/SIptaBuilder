@@ -149,6 +149,33 @@ INSERT INTO Employees (FullName, PositionID, Phone, Email, Login, Password) VALU
 ('Григорьев Павел Олегович', 12, '+375170001122', 'grigorev@company.com', 'tiler', SHA2('TilerPass&77', 256)),
 ('Семенова Виктория Дмитриевна', 13, '+375171112233', 'semenova@company.com', 'worker', SHA2('WorkerPass*88', 256)),
 ('Крылов Артем Вадимович', 14, '+375172223344', 'krylov@company.com', 'logist', SHA2('LogistPass(99', 256));
+
+CREATE USER 'admin'@'%' IDENTIFIED BY 'AdminPass123';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'admin'@'%';
+CREATE USER 'manager'@'%' IDENTIFIED BY 'ManagerPass456';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'manager'@'%';
+CREATE USER 'proраб'@'%' IDENTIFIED BY 'ProRab789';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'proраб'@'%';
+CREATE USER 'master'@'%' IDENTIFIED BY 'MasterPass111';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'master'@'%';
+CREATE USER 'electric'@'%' IDENTIFIED BY 'Electric222';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'electric'@'%';
+CREATE USER 'storekeeper'@'%' IDENTIFIED BY 'Store333';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'storekeeper'@'%';
+CREATE USER 'engineer'@'%' IDENTIFIED BY 'EngineerPass!44';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'engineer'@'%';
+CREATE USER 'designer'@'%' IDENTIFIED BY 'DesignerPass%55';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'designer'@'%';
+CREATE USER 'painter'@'%' IDENTIFIED BY 'PainterPass^66';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'painter'@'%';
+CREATE USER 'tiler'@'%' IDENTIFIED BY 'TilerPass&77';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'tiler'@'%';
+CREATE USER 'worker'@'%' IDENTIFIED BY 'WorkerPass*88';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'worker'@'%';
+CREATE USER 'logist'@'%' IDENTIFIED BY 'LogistPass(99';
+GRANT ALL PRIVILEGES ON constructioncompany.* TO 'logist'@'%';
+FLUSH PRIVILEGES;
+
 -- TRUNCATE Employees;
 
 

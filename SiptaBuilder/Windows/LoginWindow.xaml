@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:SiptaBuilder"
         xmlns:windows="clr-namespace:SiptaBuilder.Windows"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="350">
+        ResizeMode="NoResize"
+        Title="Login" Height="260" Width="350">
     <Window.Resources>
         <!-- Button Style -->
         <Style TargetType="Button">
@@ -54,26 +55,31 @@
         <PasswordBox Grid.Row="2" Grid.Column="1"
                      x:Name="txtPassword" Margin="10"
                      VerticalContentAlignment="Center"
-                     Padding="4" />
+                     Padding="4"/>
 
         <!-- Remember Me -->
-        <CheckBox Grid.Row="3" Grid.Column="1"
+        <CheckBox Grid.Row="3" Grid.Column="1" Visibility="Collapsed"
                   Content="Remember me" Margin="10 0"
                   HorizontalAlignment="Left" />
 
-        <!-- Error Message -->
-        <TextBlock Grid.Row="4" Grid.ColumnSpan="2"
-                   x:Name="txtErrorMessage" Foreground="Red"
-                   Margin="10" TextWrapping="Wrap"
-                   Visibility="Collapsed" />
+        <StackPanel
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            <!-- Error Message -->
+            <TextBlock
+                x:Name="txtErrorMessage" Foreground="Red"
+                Margin="10" TextWrapping="Wrap"
+                Visibility="Collapsed" />
 
-        <!-- Buttons -->
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="2"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right" Margin="10">
-            <Button Content="Cancel" Click="BtnCancel_Click" />
-            <Button Content="Login" Click="BtnLogin_Click"
-                    Background="#28A745" />
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Right" Margin="10">
+                <Button Content="Cancel" Click="BtnCancel_Click" />
+                <Button Content="Login" Click="BtnLogin_Click"
+                        Background="#28A745" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

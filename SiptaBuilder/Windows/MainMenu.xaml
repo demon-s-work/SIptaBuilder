@@ -17,7 +17,9 @@
 
         <StackPanel>
             <TextBlock TextWrapping="Wrap" Text="{Binding CurrentEmployee.FullName}"></TextBlock>
-            <Button Margin="0,5">
+            <Button
+                Margin="0,5"
+                Click="ButtonBase_OnClick">
                 <Label>Text</Label>
             </Button>
             <Button Margin="0,5">

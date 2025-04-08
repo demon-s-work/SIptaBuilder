@@ -1,22 +1,21 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using SiptaBuilder.Dal.Repositories.EmployeeRepository;
 
 namespace SiptaBuilder.Windows
 {
-	public class MainMenuVM : INotifyPropertyChanged
+	public class BaseWindowVm<TViewModel> : INotifyPropertyChanged where TViewModel : BaseVm, INotifyPropertyChanged
 	{
-		public Employee CurrentEmployee
+		public ObservableCollection<TViewModel> Entities
 		{
-			get => _currentEmployee;
+			get => _entities;
 			set
 			{
-				_currentEmployee = value;
+				_entities = value;
 				OnPropertyChanged();
 			}
 		}
-		
-		private Employee _currentEmployee;
+		private ObservableCollection<TViewModel> _entities = new();
 		public event PropertyChangedEventHandler? PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)

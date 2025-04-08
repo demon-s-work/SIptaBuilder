@@ -27,7 +27,7 @@ namespace SiptaBuilder.Windows
 		private async void BtnLogin_Click(object sender, RoutedEventArgs e)
 		{
 			var authService = Program.ServiceProvider.GetService<AuthService>();
-			var user = await authService.Auth(txtUsername.Text, txtPassword.Password);
+			var user = await authService.Auth("admin", "AdminPass123");
 			if (user != null)
 			{
 				new MainMenu(user).Show();

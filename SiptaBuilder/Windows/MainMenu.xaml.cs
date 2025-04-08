@@ -1,7 +1,6 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using SiptaBuilder.Dal.Repositories.EmployeeRepository.Models;
+﻿using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
+using SiptaBuilder.Dal.Repositories.EmployeeRepository;
 
 namespace SiptaBuilder.Windows
 {
@@ -16,6 +15,12 @@ namespace SiptaBuilder.Windows
 			};
 			DataContext = vm;
 
+		}
+
+		private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+		{
+			var employeeRepository = Program.ServiceProvider.GetService<EmployeeRepository>();
+			new EmployeeGroup.EmployeeWindow(await employeeRepository.GetAll()).Show();
 		}
 	}
 }
